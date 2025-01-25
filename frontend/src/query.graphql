@@ -1,5 +1,5 @@
-  query GetCakes{
-    cake(filters: { glutenFree: { eq: false } }) {
+  query GetCakes($glutenFree: Boolean!) {
+    cake(filters: { glutenFree: { eq: $glutenFree } }) {
       nodes {
         id
         name
