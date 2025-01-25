@@ -11,6 +11,8 @@ Inspired by `https://github.com/SeaQL/sea-orm/tree/master/examples/seaography_ex
 - sea-orm
   - [x] postgresql
 
+![](./backend/Seaography%20example.png)
+
 ## Frontend
 
 A typical `vite-react-ts` project.
@@ -19,3 +21,5 @@ A typical `vite-react-ts` project.
 - [x] apollo client
 - [x] graphql-codegen
 - [ ] auth
+
+![](./frontend/cake_list.png)
