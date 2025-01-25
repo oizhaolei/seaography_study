@@ -10,7 +10,6 @@ use sea_orm::Database;
 use seaography::{async_graphql, lazy_static};
 use std::env;
 use tokio::net::TcpListener;
-use tower_http::cors::{Any, CorsLayer};
 
 lazy_static::lazy_static! {
     static ref URL : String = env :: var ("URL") . unwrap_or ("localhost:8000" . into ()) ;
@@ -38,18 +37,8 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         sea_orm_seaography_example::query_root::schema(database, *DEPTH_LIMIT, *COMPLEXITY_LIMIT)
             .unwrap();
 
-    let allow_origins = [
-        "http://localhost:5173".parse()?, // for vite frontend
-    ];
-
     let app = Router::new()
-        .route("/", get(graphiql).post_service(GraphQL::new(schema)))
-        .layer(
-            CorsLayer::new()
-                .allow_origin(allow_origins)
-                .allow_headers(Any)
-                .allow_methods(Any),
-        );
+        .route("/", get(graphiql).post_service(GraphQL::new(schema)));
     println!("Visit GraphQL Playground at http://{}", *URL);
     axum::serve(TcpListener::bind(&*URL).await.unwrap(), app)
         .await

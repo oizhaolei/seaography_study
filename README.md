@@ -7,7 +7,6 @@ Inspired by `https://github.com/SeaQL/sea-orm/tree/master/examples/seaography_ex
 - Seaography
   - [x] graphql
   - [x] axum
-  - [x] cors
 - sea-orm
   - [x] postgresql
 
