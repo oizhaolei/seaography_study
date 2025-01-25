@@ -1,0 +1,13 @@
+  query GetCakes{
+    cake(filters: { glutenFree: { eq: false } }) {
+      nodes {
+        id
+        name
+        price
+        glutenFree
+        bakery {
+          name
+        }
+      }
+    }
+  }
