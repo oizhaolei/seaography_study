@@ -39,7 +39,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
             .unwrap();
 
     let allow_origins = [
-        "http://localhost:5173".parse()?,
+        "http://localhost:5173".parse()?, // for vite frontend
     ];
 
     let app = Router::new()
