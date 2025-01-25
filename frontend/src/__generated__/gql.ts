@@ -14,7 +14,7 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Learn more about it here: https://the-guild.dev/graphql/codegen/plugins/presets/preset-client#reducing-bundle-size
  */
 const documents = {
-    "query GetCakes($glutenFree: Boolean!) {\n  cake(filters: {glutenFree: {eq: $glutenFree}}) {\n    nodes {\n      id\n      name\n      price\n      glutenFree\n      bakery {\n        name\n      }\n    }\n  }\n}": types.GetCakesDocument,
+    "query GetCakes($glutenFree: Boolean!) {\n  cake(filters: {glutenFree: {eq: $glutenFree}}) {\n    nodes {\n      id\n      name\n      price\n      glutenFree\n      bakery {\n        name\n      }\n    }\n  }\n}\n\nquery GetBakeries {\n  bakery(pagination: {page: {limit: 10, page: 0}}, orderBy: {name: ASC}) {\n    nodes {\n      name\n      cake {\n        nodes {\n          name\n          price\n          baker {\n            nodes {\n              name\n            }\n          }\n        }\n      }\n    }\n  }\n}": types.GetCakesDocument,
 };
 
 /**
@@ -34,7 +34,7 @@ export function gql(source: string): unknown;
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function gql(source: "query GetCakes($glutenFree: Boolean!) {\n  cake(filters: {glutenFree: {eq: $glutenFree}}) {\n    nodes {\n      id\n      name\n      price\n      glutenFree\n      bakery {\n        name\n      }\n    }\n  }\n}"): (typeof documents)["query GetCakes($glutenFree: Boolean!) {\n  cake(filters: {glutenFree: {eq: $glutenFree}}) {\n    nodes {\n      id\n      name\n      price\n      glutenFree\n      bakery {\n        name\n      }\n    }\n  }\n}"];
+export function gql(source: "query GetCakes($glutenFree: Boolean!) {\n  cake(filters: {glutenFree: {eq: $glutenFree}}) {\n    nodes {\n      id\n      name\n      price\n      glutenFree\n      bakery {\n        name\n      }\n    }\n  }\n}\n\nquery GetBakeries {\n  bakery(pagination: {page: {limit: 10, page: 0}}, orderBy: {name: ASC}) {\n    nodes {\n      name\n      cake {\n        nodes {\n          name\n          price\n          baker {\n            nodes {\n              name\n            }\n          }\n        }\n      }\n    }\n  }\n}"): (typeof documents)["query GetCakes($glutenFree: Boolean!) {\n  cake(filters: {glutenFree: {eq: $glutenFree}}) {\n    nodes {\n      id\n      name\n      price\n      glutenFree\n      bakery {\n        name\n      }\n    }\n  }\n}\n\nquery GetBakeries {\n  bakery(pagination: {page: {limit: 10, page: 0}}, orderBy: {name: ASC}) {\n    nodes {\n      name\n      cake {\n        nodes {\n          name\n          price\n          baker {\n            nodes {\n              name\n            }\n          }\n        }\n      }\n    }\n  }\n}"];
 
 export function gql(source: string) {
   return (documents as any)[source] ?? {};

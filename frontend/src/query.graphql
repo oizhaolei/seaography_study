@@ -11,3 +11,22 @@
       }
     }
   }
+
+query GetBakeries {
+  bakery(pagination: { page: { limit: 10, page: 0 } }, orderBy: { name: ASC }) {
+    nodes {
+      name
+      cake {
+        nodes {
+          name
+          price
+          baker {
+            nodes {
+              name
+            }
+          }
+        }
+      }
+    }
+  }
+}

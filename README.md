@@ -5,17 +5,17 @@
 Inspired by `https://github.com/SeaQL/sea-orm/tree/master/examples/seaography_example`.
 
 - Seaography
-  - [ ] graphql
-  - [ ] axum
-  - [ ] cors
+  - [x] graphql
+  - [x] axum
+  - [x] cors
 - sea-orm
-  - [ ] postgresql
+  - [x] postgresql
 
 ## Frontend
 
 A typical `vite-react-ts` project.
-- [ ] vite
-- [ ] react
-- [ ] apollo client
-- [ ] graphql-codegen
+- [x] vite
+- [x] react
+- [x] apollo client
+- [x] graphql-codegen
 - [ ] auth
