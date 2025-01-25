@@ -2,6 +2,8 @@
 
 ## Backend
 
+### CRUD
+
 Inspired by `https://github.com/SeaQL/sea-orm/tree/master/examples/seaography_example`.
 
 - Seaography
@@ -12,6 +14,14 @@ Inspired by `https://github.com/SeaQL/sea-orm/tree/master/examples/seaography_ex
 
 ![](./backend/Seaography%20example.png)
 
+### Auth
+- [ ] jwt sign/verify
+- [ ] signin
+
+### Apollo Router
+- [ ] supergraph
+- [ ] routing
+
 ## Frontend
 
 A typical `vite-react-ts` project.
@@ -19,6 +29,6 @@ A typical `vite-react-ts` project.
 - [x] react
 - [x] apollo client
 - [x] graphql-codegen
-- [ ] auth
+- [ ] jwt
 
 ![](./frontend/cake_list.png)
